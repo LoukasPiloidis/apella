@@ -5,6 +5,8 @@
 }
 
 .main-div {
+  margin: auto;
+  max-width: 800px;
   height: 100vh;
   display: flex;
   flex-direction: column;
