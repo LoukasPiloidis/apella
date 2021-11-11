@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../Styles/Movie.css';
 
 const Movie = ({ filmData }) => {
 
@@ -9,10 +10,9 @@ const Movie = ({ filmData }) => {
   }
 
   return (
-    <div>
-      {filmData.filmTitle}
-      <p>{counter}</p>
-      <input type='submit' value='vote' onClick={increment} />
+    <div className="movie-main-div__single-div" >
+      <p className="movie-main-div__single-div__title" >{filmData.filmTitle} : {counter}</p>
+      <input type='submit' value='vote' onClick={increment} className="movie-main-div__single-div__button" />
     </div>
   )
 }

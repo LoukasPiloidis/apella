@@ -9,7 +9,7 @@ const ListContainer = ({ movieList }) => {
   }, [movieList])
   
   return (
-    <div>
+    <div className="movie-main-div" >
       {movieRenderer}
     </div>
   )

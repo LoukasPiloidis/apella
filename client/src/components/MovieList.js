@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Styles/SubmitForm.css';
 
 const MovieList = ({ setTitle }) => {
 
@@ -10,7 +11,7 @@ const MovieList = ({ setTitle }) => {
   }
   
   return (
-    <form onSubmit={getMovie}>
+    <form onSubmit={getMovie} className="form-main-div">
       <input type="text" placeholder="search for a movie title" />
       <input type="submit" value="search" />
     </form>
