@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const { getAllMovies, searchMovie, createSession, getSession, updateSession } = require('./Server/Routes/movies.js');
+const { getAllMovies, searchMovie, createSession, getSession, updateSession } = require('./Server/Routes/routes.js');
 const cors = require('cors');
 
 const app = express();
