@@ -3,6 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* 
+body {
+  background-image: url('./Styles/images/background.jpg');
+  background-color: #cccccc;
+ } */
 
 .main-div {
   margin: auto;

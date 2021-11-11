@@ -1,12 +1,12 @@
-import '../Styles/Header.css'
-import React from 'react'
+import '../Styles/Header.css';
+import React from 'react';
 
 const Header = () => {
   return (
-    <div className={'header'} >
+    <a href="/" className={'header'} >
       Apella
-    </div>
+    </a>
   )
 }
 
-export default Header
+export default Header;
