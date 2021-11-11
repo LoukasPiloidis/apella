@@ -9,24 +9,33 @@ const Session = ({ setMovies, movies, title }) => {
   const [filmTitle, setFilmTitle] = useState();
   const [filmDescription, setFilmDescription] = useState();
   const [filmImage, setFilmImage] = useState();
-  const [filmRating, setFilmRating] = useState();
+  const [movieList, setMovieList] = useState([]);
+
+
+  const getSession = async () => {
+    const movies = await axios.get(`http://localhost:3007/session/${id}`);
+    setMovieList(movies.data.movies);
+    console.log(movies.data.movies);
+    
+  }
 
   const addMovieToSession = async () => {
     await axios.put(`http://localhost:3007/session/${id}`, {
       id,
       movies: [{filmTitle, filmDescription, filmImage}],
     });
+    getSession();
   }
 
   const fetchMovie = async title => {
-    console.log(title);
     const film = await axios.get(`http://localhost:3007/movies/${title}`)
-    console.log(film.data.results[0]);
     setMovies(film);
     setFilmTitle(film.data.results[0].title);
     setFilmDescription(film.data.results[0].description);
     setFilmImage(film.data.results[0].image);
   }
+
+  const movieRenderer = movieList.map((film, i) => <li key={i}>{film.filmTitle}</li>)
 
   useEffect(() => {
     fetchMovie(title);
@@ -38,6 +47,9 @@ const Session = ({ setMovies, movies, title }) => {
       <p>{filmDescription}</p>
       <img src={filmImage} />
       <input type='submit' value='choose film' onClick={addMovieToSession} />
+      <div>
+        {movieRenderer}
+      </div>
     </div>
   )
 }
