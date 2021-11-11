@@ -2,11 +2,11 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import axios from 'axios';
-import MovieList from './Components/MovieList';
-import Session from './Components/Session';
-import Welcome from './Components/Welcome';
-import Header from './Components/Header';
-import Footer from './Components/Footer';
+import MovieList from './components/MovieList';
+import Session from './components/Session';
+import Welcome from './components/Welcome';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
 

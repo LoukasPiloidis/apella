@@ -15,7 +15,7 @@ app.use(cors());
 
 // Add your own middlwares here!
 
-app.get('/movies', getAllMovies);
+// app.get('/movies', getAllMovies);
 app.get('/movies/:title', searchMovie);
 app.post('/session', createSession);
 app.get('/session/:id', getSession);
