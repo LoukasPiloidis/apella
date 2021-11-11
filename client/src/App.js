@@ -1,7 +1,6 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import MovieList from './components/MovieList';
 import Session from './components/Session';
 import Welcome from './components/Welcome';
@@ -12,18 +11,6 @@ function App() {
 
   const [movies, setMovies] = useState();
   const [title, setTitle] = useState();
-
-  useEffect(() => {
-    axios.get('http://localhost:3007/movies')
-      .then(res => setMovies(res.data.fantasy));
-}, []);
-
-  // const getMovie = async id => {
-  //   const film = await axios.get(`http://localhost:3001/movies/${id}`);
-  //   setState(film.data[0]);
-  // }
-
-// const renderAllMovies = movies.map(movie => <Link to={`/movies/${movie.id}`} >{movie.title}</Link>);
 
   return (
     <>

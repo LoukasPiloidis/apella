@@ -1,16 +1,12 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router';
+import React from 'react';
 
-const MovieList = ({ setTitle, title }) => {
-
-  const navigate = useNavigate();
+const MovieList = ({ setTitle }) => {
 
   const getMovie = e => {
     e.preventDefault();
     const value = e.target.children[0].value;
     setTitle(value);
     e.target.reset();
-    // navigate(`/movies/${value}`);
   }
   
   return (

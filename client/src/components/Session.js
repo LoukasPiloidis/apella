@@ -1,10 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import ListContainer from './ListContainer';
-import MovieList from './MovieList';
 
-const Session = ({ setMovies, movies, title }) => {
+const Session = ({ setMovies, title }) => {
 
   let { id } = useParams();
 
@@ -45,7 +45,7 @@ const Session = ({ setMovies, movies, title }) => {
     <div>
       <h2>{filmTitle}</h2>
       <p>{filmDescription}</p>
-      <img src={filmImage} />
+      <img src={filmImage} alt={filmTitle} />
       <input type='submit' value='choose film' onClick={addMovieToSession} />
       <ListContainer movieList={movieList}/>
     </div>
