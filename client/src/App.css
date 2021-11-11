@@ -3,13 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* 
-body {
-  background-image: url('./Styles/images/background.jpg');
-  background-color: #cccccc;
- } */
 
 .main-div {
+  background-image: url('./Styles/images/background.jpg');
+  background-size: cover;
   margin: auto;
   max-width: 800px;
   height: 100vh;
