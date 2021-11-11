@@ -1,9 +1,10 @@
+import '../Styles/Header.css'
 import React from 'react'
 
 const Header = () => {
   return (
-    <div>
-      Header
+    <div className={'header'} >
+      Apella
     </div>
   )
 }

@@ -1,3 +1,4 @@
+import '../Styles/Welcome.css'
 import axios from 'axios';
 import React from 'react';
 import { useNavigate } from 'react-router';
@@ -15,8 +16,8 @@ const Welcome = () => {
     navigate(`/session/${id}`);}
 
   return (
-    <div>
-      <input type="submit" value="Get Started" onClick={handleClick}/>
+    <div className={'main-div__button'} >
+      <input type="submit" value="Get Started" onClick={handleClick} className={'get-started-button'} />
     </div>
   )
 }

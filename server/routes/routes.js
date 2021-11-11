@@ -5,10 +5,10 @@ const sessions = [];
 
 const searchMovie = async (req, res) => {
   const { title } = req.params;
-  // const movie = await axios.get(`https://imdb-api.com/en/API/SearchMovie/k_6hif9516/${title}`)
+  const movie = await axios.get(`https://imdb-api.com/en/API/SearchMovie/k_6hif9516/${title}`)
   res.header("Access-Control-Allow-Origin", "*");
-  // res.send(200, movie.data);
-  res.send(db.data);
+  res.send(200, movie.data);
+  // res.send(db.data);
 };
 
 const createSession = (req, res) => {
@@ -30,7 +30,6 @@ const updateSession = (req, res) => {
   const { id } = req.body;
   const session = sessions.filter(film => film.id === parseInt(id) ? film.movies.push(movies[0]) : film)[0];
   const finalSession = sessions.map(film => film.id === parseInt(id) ? film = session : film);
-  console.log('session', sessions);
   res.setHeader('Content-Type', 'application/json');
   res.status(200).send();
 }

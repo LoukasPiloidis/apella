@@ -7,6 +7,7 @@ const Movie = ({ filmData }) => {
   const increment = () => {
     setCounter(counter + 1);
   }
+
   return (
     <div>
       {filmData.filmTitle}

@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Movie from './Movie';
 
 const ListContainer = ({ movieList }) => {
+  const [movieRenderer, setMovieRenderer] = useState([])
 
-  console.log(movieList);
-
-  const movieRenderer = movieList.map((film, i) => <Movie key={i} filmData={film} />)
+  useEffect(() => {
+    setMovieRenderer(movieList.map((film, i) => <Movie key={i} filmData={film} />))
+  }, [movieList])
   
   return (
     <div>

@@ -10,10 +10,10 @@ import Footer from './components/Footer';
 function App() {
 
   const [movies, setMovies] = useState();
-  const [title, setTitle] = useState();
+  const [title, setTitle] = useState(null);
 
   return (
-    <>
+    <div className={'main-div'} >
       <Header />
       <Routes>
         <Route path="/" element={< Welcome />} />
@@ -26,7 +26,7 @@ function App() {
         />
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 }
 
