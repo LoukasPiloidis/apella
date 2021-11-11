@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import MovieList from './components/MovieList';
+import SubmitForm from './components/SubmitForm';
 import Session from './components/Session';
 import Welcome from './components/Welcome';
 import Header from './components/Header';
@@ -17,10 +17,10 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={< Welcome />} />
-        <Route path="/movies" element={<MovieList setTitle={setTitle} title={title} />} />
+        <Route path="/movies" element={<SubmitForm setTitle={setTitle} title={title} />} />
         <Route path="/session/:id" element={
           <>
-            <MovieList setTitle={setTitle} title={title} />
+            <SubmitForm setTitle={setTitle} title={title} />
             <Session setMovies={setMovies} title={title} movies={movies} />
           </>} 
         />

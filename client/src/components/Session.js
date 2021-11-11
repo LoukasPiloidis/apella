@@ -48,7 +48,7 @@ const Session = ({ setMovies, title }) => {
       <h2>{filmTitle}</h2>
       <p>{filmDescription}</p>
       <img src={filmImage} alt={filmTitle} />
-      <input className="main-div__movie-div__button" type='submit' value='choose film' onClick={addMovieToSession} />
+      {title && <input className="main-div__movie-div__button" type='submit' value='choose film' onClick={addMovieToSession} />}
       <ListContainer movieList={movieList}/>
     </div>
   )
