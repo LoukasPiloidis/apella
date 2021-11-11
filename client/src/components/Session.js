@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
+import ListContainer from './ListContainer';
+import MovieList from './MovieList';
 
 const Session = ({ setMovies, movies, title }) => {
 
@@ -35,8 +37,6 @@ const Session = ({ setMovies, movies, title }) => {
     setFilmImage(film.data.results[0].image);
   }
 
-  const movieRenderer = movieList.map((film, i) => <li key={i}>{film.filmTitle}</li>)
-
   useEffect(() => {
     fetchMovie(title);
 }, [title]);
@@ -47,9 +47,7 @@ const Session = ({ setMovies, movies, title }) => {
       <p>{filmDescription}</p>
       <img src={filmImage} />
       <input type='submit' value='choose film' onClick={addMovieToSession} />
-      <div>
-        {movieRenderer}
-      </div>
+      <ListContainer movieList={movieList}/>
     </div>
   )
 }
