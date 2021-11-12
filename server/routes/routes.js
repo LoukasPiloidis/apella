@@ -5,9 +5,14 @@ const sessions = [];
 
 const searchMovie = async (req, res) => {
   const { title } = req.params;
-  const movie = await axios.get(`https://imdb-api.com/en/API/SearchMovie/k_6hif9516/${title}`)
-  res.header("Access-Control-Allow-Origin", "*");
-  res.send(200, movie.data);
+  try {
+    const movie = await axios.get(`https://imdb-api.com/en/API/SearchMovie/k_6hif9516/${title}`)
+    res.header("Access-Control-Allow-Origin", "*");
+    res.status(200).send(movie.data);
+  } catch (error) {
+    console.log(error);
+  }
+
   // res.send(db.data);
 };
 

@@ -21,7 +21,7 @@ function App() {
         <Route path="/session/:id" element={
           <>
             <SubmitForm setTitle={setTitle} title={title} />
-            <Session setMovies={setMovies} title={title} movies={movies} />
+            <Session setMovies={setMovies} setTitle={setTitle} title={title} movies={movies} />
           </>} 
         />
       </Routes>

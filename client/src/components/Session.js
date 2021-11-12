@@ -5,11 +5,11 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import ListContainer from './ListContainer';
 
-const Session = ({ setMovies, title }) => {
+const Session = ({ setMovies, title, setTitle }) => {
 
   let { id } = useParams();
 
-  const [filmTitle, setFilmTitle] = useState('');
+  const [filmTitle, setFilmTitle] = useState();
   const [filmDescription, setFilmDescription] = useState('');
   const [filmImage, setFilmImage] = useState('');
   const [movieList, setMovieList] = useState([]);
@@ -31,9 +31,14 @@ const Session = ({ setMovies, title }) => {
   const fetchMovie = async title => {
     const film = await axios.get(`http://localhost:3007/movies/${title}`)
     setMovies(film);
-    setFilmTitle(film.data.results[0].title);
-    setFilmDescription(film.data.results[0].description);
-    setFilmImage(film.data.results[0].image);
+    if (film.data.results[0] === undefined) {
+      setFilmDescription('This title does not seem to exist. Please check spelling and try again.');
+      setTitle(null);
+    } else {
+      setFilmTitle(film.data.results[0].title);
+      setFilmDescription(film.data.results[0].description);
+      setFilmImage(film.data.results[0].image);
+    }
   }
 
   useEffect(() => {
