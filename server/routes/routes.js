@@ -1,7 +1,7 @@
 const axios = require('axios');
 const db = require('../../database/db.json');
 
-const sessions = [];
+let sessions = [];
 
 const searchMovie = async (req, res) => {
   const { title } = req.params;
@@ -20,6 +20,7 @@ const createSession = (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.header({ 'Content-Type': 'application/json', 'Location': '/api/session' });
   sessions.push(req.body);
+  console.log(sessions);
   res.send(201);
 }
 
@@ -32,11 +33,19 @@ const getSession = (req, res) => {
 
 const updateSession = (req, res) => {
   const { movies } = req.body;
-  const { id } = req.body;
+  const { id } = req.params;
   const session = sessions.filter(film => film.id === parseInt(id) ? film.movies.push(movies[0]) : film)[0];
-  const finalSession = sessions.map(film => film.id === parseInt(id) ? film = session : film);
+  sessions.map(film => film.id === parseInt(id) ? film = session : film);
   res.setHeader('Content-Type', 'application/json');
   res.status(200).send();
 }
 
-module.exports = { searchMovie, createSession, getSession, updateSession };
+const deleteSession = (req, res) => {
+  const { id } = req.params;
+  const remainingSessions = sessions.filter(film => film.id !== parseInt(id));
+  sessions = remainingSessions;
+  res.setHeader('Content-Type', 'application/json');
+  res.status(200).send();
+}
+
+module.exports = { searchMovie, createSession, getSession, updateSession, deleteSession };
