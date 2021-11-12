@@ -1,20 +1,6 @@
-.form-main-div {
-  margin-top: 5%;
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.form-main-div input[type=text] {
-  font-size: x-large;
-  width: 80%;
-  padding: 5%;
-}
-
-.form-main-div input[type=submit] {
+.movie-main-div__remove-btn {
   width: 40%;
-  margin-top: 1%;
+  margin-top: 3%;
   padding: 3%;
   font-size: large;
   background-color: rgb(218,165,32);

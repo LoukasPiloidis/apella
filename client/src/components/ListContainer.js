@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Movie from './Movie';
+import '../Styles/ListContainer.css';
 
 const ListContainer = ({ movieList }) => {
 
@@ -25,7 +26,7 @@ const ListContainer = ({ movieList }) => {
   return (
     <div className="movie-main-div" >
       {movieRenderer}
-      <p>{movieList.length > 0 && removeButton}</p>
+      {movieList.length > 0 && removeButton}
     </div>
   )
 }
