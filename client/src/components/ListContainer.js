@@ -12,7 +12,6 @@ const ListContainer = ({ movieList }) => {
   const [movieRenderer, setMovieRenderer] = useState([]);
 
   const removeList = async () => {
-    console.log(id);
     await axios.delete(`http://localhost:3007/session/${id}`);
     navigate('/');
   };

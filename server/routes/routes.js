@@ -20,7 +20,6 @@ const createSession = (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.header({ 'Content-Type': 'application/json', 'Location': '/api/session' });
   sessions.push(req.body);
-  console.log(sessions);
   res.send(201);
 }
 
@@ -30,6 +29,18 @@ const getSession = (req, res) => {
   const session = sessions.filter(session => session.id === parseInt(id))[0];
   res.status(200).send(session);
 }
+
+const updateVotes = (req, res) => {
+  const { id } = req.body;
+  const { inc } = req.body;
+  if (inc !== 1) {
+    return;
+  };
+  sessions.map(session => session.id === parseInt(id) ? session.movies[0].votes += 1 : session);
+  console.log(sessions[0].movies);
+  res.setHeader('Content-Type', 'application/json');
+  res.status(200).send();
+};
 
 const updateSession = (req, res) => {
   const { movies } = req.body;
@@ -48,4 +59,4 @@ const deleteSession = (req, res) => {
   res.status(200).send();
 }
 
-module.exports = { searchMovie, createSession, getSession, updateSession, deleteSession };
+module.exports = { searchMovie, createSession, getSession, updateSession, updateVotes, deleteSession };

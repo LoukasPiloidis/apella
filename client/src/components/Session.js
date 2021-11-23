@@ -23,7 +23,7 @@ const Session = ({ setMovies, title, setTitle }) => {
   const addMovieToSession = async () => {
     await axios.put(`http://localhost:3007/session/${id}`, {
       id,
-      movies: [{filmTitle, filmDescription, filmImage}],
+      movies: [{filmTitle, filmDescription, filmImage, votes: 0}],
     });
     getSession();
   }
