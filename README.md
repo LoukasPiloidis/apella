@@ -9,7 +9,6 @@ At the moment, the app is connected to the IMDb public api because it has no dat
 2. Possibility to share the voting form link with other devices.
 3. Possibility to create an account and store personal preferences, movies, and friends.
 
-
 ... and many more.
 
 Stay tuned and await until early January 2021. Until then, feel free to explore and suggest any potential add-ons/fixes/bugs.
