@@ -11,9 +11,7 @@ const searchMovie = async (req, res) => {
     res.status(200).send(movie.data);
   } catch (error) {
     console.log(error);
-  }
-
-  // res.send(db.data);
+  };
 };
 
 const createSession = (req, res) => {
