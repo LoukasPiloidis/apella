@@ -11,13 +11,16 @@ const Movie = ({ filmData }) => {
 
   const getData = async () => {
     const movies = await axios.get(`http://localhost:3007/session/${id}`);
-    setCounter(movies.data.movies[0].votes);
+    const movie = movies.data.movies.find(film => film.filmTitle === filmData.filmTitle);
+    setCounter(movie.votes);
+    // console.log(movie.votes);
   }
 
   const increment = async () => {
     await axios.put(`http://localhost:3007/session/1`, {
     id,
     inc: 1,
+    title: filmData.filmTitle,
     });
     getData();
   };

@@ -30,12 +30,13 @@ const getSession = (req, res) => {
 
 const updateVotes = (req, res) => {
   const { id } = req.body;
-  const { inc } = req.body;
+  const { inc, title } = req.body;
   if (inc !== 1) {
     return;
   };
-  sessions.map(session => session.id === parseInt(id) ? session.movies[0].votes += 1 : session);
-  console.log(sessions[0].movies);
+  const session = sessions.filter(session => session.id === parseInt(id))[0];
+  const movie = session.movies.filter(film => film.filmTitle === title ? film.votes += 1: film);
+  console.log(movie);
   res.setHeader('Content-Type', 'application/json');
   res.status(200).send();
 };
