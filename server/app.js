@@ -5,6 +5,8 @@ const cors = require('cors');
 
 const app = express();
 
+const port = process.env.port || 3007
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
@@ -16,4 +18,4 @@ app.put('/session/1', updateVotes);
 app.put('/session/:id', updateSession);
 app.delete('/session/:id', deleteSession);
 
-app.listen(3007, () => console.log('server up and running'));
+app.listen(port, () => console.log('server up and running'));
