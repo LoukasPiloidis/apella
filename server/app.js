@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const { searchMovie, createSession, getSession, updateSession, updateVotes, deleteSession } = require('./Routes/routes.js');
+const { searchMovie, createSession, getSession, updateSession, updateVotes, deleteSession } = require('./routes/routes.js');
 const cors = require('cors');
 
 const app = express();
