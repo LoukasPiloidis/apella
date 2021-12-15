@@ -9,7 +9,7 @@ const Movie = ({ filmData }) => {
 
   const [counter, setCounter] = useState(0);
 
-  const url = 'https://apella-server.herokuapp.com/';
+  const url = 'https://apella-server.herokuapp.com';
   const urlDev = 'http://localhost:3007';
 
   const getData = async () => {

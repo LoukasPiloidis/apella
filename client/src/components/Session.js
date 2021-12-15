@@ -14,7 +14,7 @@ const Session = ({ setMovies, title, setTitle }) => {
   const [filmImage, setFilmImage] = useState('');
   const [movieList, setMovieList] = useState([]);
 
-  const url = 'https://apella-server.herokuapp.com/';
+  const url = 'https://apella-server.herokuapp.com';
   const urlDev = 'http://localhost:3007';
 
 

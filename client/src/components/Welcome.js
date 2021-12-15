@@ -7,7 +7,7 @@ const Welcome = () => {
 
   let navigate = useNavigate()
 
-  const url = 'https://apella-server.herokuapp.com/';
+  const url = 'https://apella-server.herokuapp.com';
   const urlDev = 'http://localhost:3007';
 
   const handleClick = async () => {
