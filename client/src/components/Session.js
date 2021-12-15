@@ -14,14 +14,17 @@ const Session = ({ setMovies, title, setTitle }) => {
   const [filmImage, setFilmImage] = useState('');
   const [movieList, setMovieList] = useState([]);
 
+  const url = 'https://apella-server.herokuapp.com/';
+  const urlDev = 'http://localhost:3007';
+
 
   const getSession = async () => {
-    const movies = await axios.get(`http://localhost:3007/session/${id}`);
+    const movies = await axios.get(`${url}/session/${id}`);
     setMovieList(movies.data.movies);
   }
 
   const addMovieToSession = async () => {
-    await axios.put(`http://localhost:3007/session/${id}`, {
+    await axios.put(`${url}/session/${id}`, {
       id,
       movies: [{filmTitle, filmDescription, filmImage, votes: 0}],
     });
@@ -29,7 +32,7 @@ const Session = ({ setMovies, title, setTitle }) => {
   }
 
   const fetchMovie = async title => {
-    const film = await axios.get(`http://localhost:3007/movies/${title}`)
+    const film = await axios.get(`${url}/movies/${title}`)
     setMovies(film);
     if (film.data.results[0] === undefined) {
       setFilmDescription('This title does not seem to exist. Please check spelling and try again.');

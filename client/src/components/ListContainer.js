@@ -6,13 +6,16 @@ import '../Styles/ListContainer.css';
 
 const ListContainer = ({ movieList }) => {
 
+  const url = 'https://apella-server.herokuapp.com/';
+  const urlDev = 'http://localhost:3007';
+
   const { id } = useParams();
   const navigate = useNavigate();
 
   const [movieRenderer, setMovieRenderer] = useState([]);
 
   const removeList = async () => {
-    await axios.delete(`http://localhost:3007/session/${id}`);
+    await axios.delete(`${url}/session/${id}`);
     navigate('/');
   };
 
